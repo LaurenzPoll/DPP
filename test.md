@@ -10,3 +10,7 @@ Then we changed it to a new branch by using git checkout -b test_branch
 This file is an addition to what was already in the main branch.
 
 Now we will first commit it to this branch, push it & then merge it with the main branch.
+
+
+
+A new change
