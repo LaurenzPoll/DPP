@@ -15,6 +15,8 @@ import java.util.List;
 @RequestMapping
 public class InputController {
 
+    public InputDate InputDate;
+
     // 显示输入页面
    @GetMapping
     public String hello(){return"hello world";}
@@ -23,8 +25,12 @@ public class InputController {
     private InputService inputService;
 
     @GetMapping("/list")
-    public List<InputDate> list(){
-        return inputService.list();
-    }
-    }
+    public String list(){
+        InputDate inputDate=new InputDate();
+        inputDate.setBatteryName("NanFu");
+        inputDate.setBatteryType("small");
+        String date=inputDate.getBatteryName()+inputDate.getBatteryType();
+
+         return date;
+    }}
 
