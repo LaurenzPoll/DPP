@@ -2,7 +2,7 @@
   <div class="homepage">
     <!-- 工具简介部分 -->
     <section class="intro">
-      <h1>DPP 快速扫描工具</h1>
+      <h1>Dpp Quick Scan Tool</h1>
       <p>Welcome to the DPP Quick Scan Tool! This tool is designed to help LFP battery companies quickly assess their readiness for DPP compliance.</p >
       <p>With a streamlined scanning process, you can get a gap analysis that identifies specific areas for improvement.</p >
     </section>
