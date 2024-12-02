@@ -1,15 +1,19 @@
 <template>
 
+
   <div>
     <form @submit.prevent="handleSubmit" method="post">
+
 
       <label for="myDateTime">Select a date and time:</label>
       <input type="datetime-local" id="myDateTime" name="myDateTime">
       <br>
 
+
       <input type="file" id="file" name="file" @change="handleFileChange" />
 
       <br>
+
 
 
       <h2>battery design</h2>
@@ -155,13 +159,16 @@
     </form>
 
 
+
     <!-- 错误和成功消息显示 -->
     <div v-if="errorMessage" class="error">{{ errorMessage }}</div>
     <div v-if="successMessage" class="success">{{ successMessage }}</div>
+
   </div>
 </template>
 
 <script>
+
 import { createListItem } from './api/listApi.js';  // 引入 API 模块
 
 export default {
@@ -201,6 +208,7 @@ export default {
     }
   }
 };
+
 </script>
 
 <style scoped>
@@ -237,6 +245,7 @@ button {
   cursor: pointer;
 }
 
+
 /* 错误和成功消息的样式 */
 .error {
   color: red;
@@ -247,3 +256,4 @@ button {
 }
 
 </style>
+
