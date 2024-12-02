@@ -8,8 +8,12 @@
 export default {
   name: 'App'
 };
+
+
+
 </script>
 
 <style>
 /* 全局样式可以在这里定义 */
+
 </style>
