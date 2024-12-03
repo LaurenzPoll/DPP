@@ -1,0 +1,19 @@
+# Node modules and dependencies (for frontend and backend)
+**/node_modules
+**/dist
+**/build
+
+# Environment variables
+**/.env
+
+# IntelliJ IDEA files
+.idea/
+*.iml
+*.iws
+
+# Visual Studio Code settings
+.vscode/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
