@@ -1,16 +1,1 @@
-# DPP
-THis is a new change new new new
-repository for Digital Project Passport
-...
-test
-...
-...
-
-hello
-
-
-Sofia dropped by!
-
-branch 1
-
-yalen dropped by
+The current project uses the Java Validate API to perform basic validation on data sent from the frontend.
