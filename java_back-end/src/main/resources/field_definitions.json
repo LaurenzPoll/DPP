@@ -2,48 +2,39 @@
   "fields": [
     {
       "Field": "Battery Passport Identification",
-      "Requirement Level": "Mandatory",
-      "Reasoning": "Unambiguous identification: ensuring liability, responsibility, and clear attribution of data to the battery passport."
+      "Requirement Level": "Mandatory"
     },
     {
       "Field": "Battery Identification",
-      "Requirement Level": "Mandatory",
-      "Reasoning": "Unambiguous identification: ensuring liability, responsibility, and clear attribution of data to the battery passport."
+      "Requirement Level": "Mandatory"
     },
     {
       "Field": "Responsible Economic Operator Identifier",
-      "Requirement Level": "Mandatory",
-      "Reasoning": "Unambiguous identification: ensuring liability, responsibility, and clear attribution of data to the battery passport."
+      "Requirement Level": "Mandatory"
     },
     {
       "Field": "Manufacturer's Identification",
-      "Requirement Level": "Mandatory",
-      "Reasoning": "Unambiguous identification: ensuring liability, responsibility, and clear attribution of data to the battery passport."
+      "Requirement Level": "Mandatory"
     },
     {
       "Field": "Manufacturing Place (manufacturing facility geographical location)",
-      "Requirement Level": "Mandatory",
-      "Reasoning": "Unambiguous identification: ensuring liability, responsibility, and clear attribution of data to the battery passport."
+      "Requirement Level": "Mandatory"
     },
     {
       "Field": "Manufacturing Date",
-      "Requirement Level": "Mandatory",
-      "Reasoning": "Unambiguous identification: ensuring liability, responsibility, and clear attribution of data to the battery passport."
+      "Requirement Level": "Mandatory"
     },
     {
       "Field": "Battery category",
-      "Requirement Level": "Mandatory",
-      "Reasoning": "Categories with differing reporting requirements: determination of the battery passport content."
+      "Requirement Level": "Mandatory"
     },
     {
       "Field": "Weight",
-      "Requirement Level": "Voluntary",
-      "Reasoning": "Basic battery characteristics: key information and required to calculate other data."
+      "Requirement Level": "Voluntary"
     },
     {
       "Field": "Battery Status",
-      "Requirement Level": "Mandatory",
-      "Reasoning": "Basic battery characteristics: key information and required to calculate other data."
+      "Requirement Level": "Mandatory"
     }
   ]
 }

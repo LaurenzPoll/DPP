@@ -16,8 +16,7 @@ This document outlines the JSON structure for handling **Digital Product Passpor
         "Requirement Level",
         "Compliance",
         "Input",
-        "Gap",
-        "Reasoning"
+        "Gap"
       ],
       "rows": [
         {
@@ -25,72 +24,63 @@ This document outlines the JSON structure for handling **Digital Product Passpor
           "Requirement Level": "Mandatory",
           "Compliance": "Not Compliant",
           "Input": "Not provided",
-          "Gap": "Field not provided",
-          "Reasoning": "Unambiguous identification: ensuring liability, responsibility, and clear attribution of data to the battery passport."
+          "Gap": "Field not provided"
         },
         {
           "Field": "Battery Identification",
           "Requirement Level": "Mandatory",
           "Compliance": "Compliant",
           "Input": "Unique ID: BAT-12345",
-          "Gap": "None",
-          "Reasoning": "Unambiguous identification: ensuring liability, responsibility, and clear attribution of data to the battery passport."
+          "Gap": "None"
         },
         {
           "Field": "Responsible Economic Operator Identifier",
           "Requirement Level": "Mandatory",
           "Compliance": "Partially Compliant",
           "Input": "Identifiers available for 70% of operators",
-          "Gap": "Some operators lack unique identifiers.",
-          "Reasoning": "Unambiguous identification: ensuring liability, responsibility, and clear attribution of data to the battery passport."
+          "Gap": "Some operators lack unique identifiers."
         },
         {
           "Field": "Manufacturer's Identification",
           "Requirement Level": "Mandatory",
           "Compliance": "Compliant",
           "Input": "Manufacturer ID: MANU-67890",
-          "Gap": "None",
-          "Reasoning": "Unambiguous identification: ensuring liability, responsibility, and clear attribution of data to the battery passport."
+          "Gap": "None"
         },
         {
           "Field": "Manufacturing Place (manufacturing facility geographical location)",
           "Requirement Level": "Mandatory",
           "Compliance": "Not Compliant",
           "Input": "Not provided",
-          "Gap": "Field not provided",
-          "Reasoning": "Unambiguous identification: ensuring liability, responsibility, and clear attribution of data to the battery passport."
+          "Gap": "Field not provided"
         },
         {
           "Field": "Manufacturing Date (month and year)",
           "Requirement Level": "Mandatory",
           "Compliance": "Not Compliant",
           "Input": "Not provided",
-          "Gap": "Field not provided",
-          "Reasoning": "Unambiguous identification: ensuring liability, responsibility, and clear attribution of data to the battery passport."
+          "Gap": "Field not provided"
         },
         {
           "Field": "Battery category",
           "Requirement Level": "Mandatory",
           "Compliance": "Compliant",
           "Input": "original",
-          "Gap": "None",
-          "Reasoning": "Categories with differing reporting requirements: determination of the battery passport content."
+          "Gap": "None"
         },
         {
           "Field": "Weight",
           "Requirement Level": "Voluntary",
           "Compliance": "Compliant",
           "Input": "No weight data recorded",
-          "Gap": "None",
-          "Reasoning": "Basic battery characteristics: key information and required to calculate other data."
+          "Gap": "None"
         },
         {
           "Field": "Battery Status",
           "Requirement Level": "Mandatory",
           "Compliance": "Not Compliant",
           "Input": "Status field left blank",
-          "Gap": "Field not provided",
-          "Reasoning": "Basic battery characteristics: key information and required to calculate other data."
+          "Gap": "Field not provided"
         }
       ]
     }
@@ -160,8 +150,6 @@ Defines the headers of the table:
 
     - *This will likely be expanded with other options*
 
-- **`Reasoning`**: Explains the need for the field.
-
 ---
 
 ### `rows` Key
@@ -178,8 +166,7 @@ Example:
   "Requirement Level": "Mandatory",
   "Compliance": "Not Compliant",
   "Input": "Not provided",
-  "Gap": "Field not provided",
-  "Reasoning": "Unambiguous identification: ensuring liability, responsibility, and clear attribution of data to the battery passport."
+  "Gap": "Field not provided"
 }
 ```
 
