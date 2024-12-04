@@ -1,0 +1,49 @@
+{
+  "fields": [
+    {
+      "Field": "Battery Passport Identification",
+      "Requirement Level": "Mandatory",
+      "Reasoning": "Unambiguous identification: ensuring liability, responsibility, and clear attribution of data to the battery passport."
+    },
+    {
+      "Field": "Battery Identification",
+      "Requirement Level": "Mandatory",
+      "Reasoning": "Unambiguous identification: ensuring liability, responsibility, and clear attribution of data to the battery passport."
+    },
+    {
+      "Field": "Responsible Economic Operator Identifier",
+      "Requirement Level": "Mandatory",
+      "Reasoning": "Unambiguous identification: ensuring liability, responsibility, and clear attribution of data to the battery passport."
+    },
+    {
+      "Field": "Manufacturer's Identification",
+      "Requirement Level": "Mandatory",
+      "Reasoning": "Unambiguous identification: ensuring liability, responsibility, and clear attribution of data to the battery passport."
+    },
+    {
+      "Field": "Manufacturing Place (manufacturing facility geographical location)",
+      "Requirement Level": "Mandatory",
+      "Reasoning": "Unambiguous identification: ensuring liability, responsibility, and clear attribution of data to the battery passport."
+    },
+    {
+      "Field": "Manufacturing Date",
+      "Requirement Level": "Mandatory",
+      "Reasoning": "Unambiguous identification: ensuring liability, responsibility, and clear attribution of data to the battery passport."
+    },
+    {
+      "Field": "Battery category",
+      "Requirement Level": "Mandatory",
+      "Reasoning": "Categories with differing reporting requirements: determination of the battery passport content."
+    },
+    {
+      "Field": "Weight",
+      "Requirement Level": "Voluntary",
+      "Reasoning": "Basic battery characteristics: key information and required to calculate other data."
+    },
+    {
+      "Field": "Battery Status",
+      "Requirement Level": "Mandatory",
+      "Reasoning": "Basic battery characteristics: key information and required to calculate other data."
+    }
+  ]
+}
