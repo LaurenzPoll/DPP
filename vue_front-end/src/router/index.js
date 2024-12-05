@@ -1,8 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router';
 
 import HomePage from '../components/HomePage.vue';
-import Form from '../components/Form.vue';
 import QuickScanResults from '../components/QuickScanResults.vue';
+import UpdateForm from "@/components/UpdateForm.vue";
 
 
 // 如果需要使用环境变量，使用 import.meta.env 替代 process.env
@@ -15,15 +15,16 @@ const routes = [
         name: 'Home',
         component: HomePage
     },
-    {
-        path: '/form',
-        name: 'Form',
-        component: Form
-    },
+
     {
         path: '/quickscan-results',
         name: 'QuickScanResults',
         component: QuickScanResults
+    },
+    {
+        path: '/updateForm',
+        name: 'UpdateForm',
+        component: UpdateForm
     }
 ];
 
