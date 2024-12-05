@@ -1,15 +1,34 @@
 <template>
-  <div id="app">
-    <router-view /> <!-- 这里会渲染当前路由对应的组件 -->
+  <div id="app" class="app-layout">
+    <!-- 左侧侧边栏 -->
+    <Sidebar />
+    <!-- 右侧内容区域 -->
+    <div class="main-content">
+      <router-view /> <!-- 动态切换路由内容 -->
+    </div>
   </div>
 </template>
 
 <script>
+import Sidebar from './components/Sidebar.vue';
+
 export default {
-  name: 'App'
+  name: 'App',
+  components: {
+    Sidebar,
+  },
 };
 </script>
 
 <style>
-/* 全局样式可以在这里定义 */
+.app-layout {
+  display: flex;
+  height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+  padding: 20px;
+  margin-left: 200px; /* 确保内容不与侧边栏重叠 */
+}
 </style>

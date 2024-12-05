@@ -1,9 +1,18 @@
 <template>
   <div class="sidebar">
     <ul>
-      <li><router-link to="/form">Form Page</router-link></li>
-      <li><router-link to="/guide">Guide Page</router-link></li>
-      <li><router-link to="/information">Information Page</router-link></li>
+      <li>
+        <router-link to="/">Home Page</router-link>
+      </li>
+      <li>
+        <router-link to="/form">Form Page</router-link>
+      </li>
+      <li>
+        <router-link to="/guide">Guide Page</router-link>
+      </li>
+      <li>
+        <router-link to="/information">Information Page</router-link>
+      </li>
     </ul>
   </div>
 </template>
@@ -20,6 +29,9 @@ export default {
   background-color: #f0f0f0;
   padding: 20px;
   height: 100vh;
+  position: fixed; /* 固定侧边栏在页面左侧 */
+  top: 0;
+  left: 0;
 }
 
 .sidebar ul {
