@@ -1,0 +1,40 @@
+{
+  "fields": [
+    {
+      "Field": "Battery Passport Identification",
+      "Requirement Level": "Mandatory"
+    },
+    {
+      "Field": "Battery Identification",
+      "Requirement Level": "Mandatory"
+    },
+    {
+      "Field": "Responsible Economic Operator Identifier",
+      "Requirement Level": "Mandatory"
+    },
+    {
+      "Field": "Manufacturer's Identification",
+      "Requirement Level": "Mandatory"
+    },
+    {
+      "Field": "Manufacturing Place (manufacturing facility geographical location)",
+      "Requirement Level": "Mandatory"
+    },
+    {
+      "Field": "Manufacturing Date",
+      "Requirement Level": "Mandatory"
+    },
+    {
+      "Field": "Battery category",
+      "Requirement Level": "Mandatory"
+    },
+    {
+      "Field": "Weight",
+      "Requirement Level": "Voluntary"
+    },
+    {
+      "Field": "Battery Status",
+      "Requirement Level": "Mandatory"
+    }
+  ]
+}
