@@ -2,16 +2,16 @@
   <div class="sidebar">
     <ul>
       <li>
-        <router-link to="/" class="link" active-class="active">Home</router-link>
+        <router-link to="/" class="link" active-class="active">🏠 Home</router-link>
       </li>
       <li>
-        <router-link to="/form" class="link" active-class="active">Form</router-link>
+        <router-link to="/updateform" class="link" active-class="active">📝 Form</router-link>
       </li>
       <li>
-        <router-link to="/guide" class="link" active-class="active">Guide</router-link>
+        <router-link to="/quickscan-results" class="link" active-class="active">📊 QuickScan results</router-link>
       </li>
       <li>
-        <router-link to="/information" class="link" active-class="active">Information</router-link>
+        <router-link to="/information" class="link" active-class="active">ℹ️ Information</router-link>
       </li>
     </ul>
   </div>
@@ -25,7 +25,7 @@ export default {
 
 <style scoped>
 .sidebar {
-  width:180px;
+  width: 180px;
   background-color: #f8f9fa;
   padding: 20px;
   height: 100vh;

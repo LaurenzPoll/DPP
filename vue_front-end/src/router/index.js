@@ -1,12 +1,25 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import HomePage from '../components/HomePage.vue';
-import FormPage from '../components/FormPage.vue';
-import GuidePage from '../components/GuidePage.vue';
+import QuickScanResults from '../components/QuickScanResults.vue';
+import UpdateForm from "@/components/UpdateForm.vue";
 
 const routes = [
-    { path: '/', name: 'HomePage', component: HomePage },
-    { path: '/form', name: 'FormPage', component: FormPage },
-    { path: '/guide', name: 'GuidePage', component: GuidePage },
+    {
+        path: '/',
+        name: 'Home',
+        component: HomePage
+    },
+
+    {
+        path: '/quickscan-results',
+        name: 'QuickScanResults',
+        component: QuickScanResults
+    },
+    {
+        path: '/updateForm',
+        name: 'UpdateForm',
+        component: UpdateForm
+    }
 ];
 
 const router = createRouter({
