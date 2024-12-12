@@ -10,7 +10,8 @@
     <!-- 导航菜单 -->
     <nav class="navigation">
       <ul>
-        <li><router-link to="/updateForm">Input form</router-link></li>
+
+        <li><router-link to="/inputForm">Input form</router-link></li>
         <li><router-link to="/quickscan-results">view the quick scan results</router-link></li>
 
       </ul>

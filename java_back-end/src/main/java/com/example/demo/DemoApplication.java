@@ -6,11 +6,16 @@ import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
+import org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration;
+import org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
-@SpringBootApplication
+@SpringBootApplication(exclude = {
+		DataSourceAutoConfiguration.class,
+		DataSourceTransactionManagerAutoConfiguration.class,
+		HibernateJpaAutoConfiguration.class
+})
 @EnableTransactionManagement
 @MapperScan("com.example.demo.mapper.**")
-
 public class DemoApplication {
 
 	public static void main(String[] args) {

@@ -2,7 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router';
 
 import HomePage from '../components/HomePage.vue';
 import QuickScanResults from '../components/QuickScanResults.vue';
-import UpdateForm from "@/components/UpdateForm.vue";
+import inputForm from '../components/inputForm.vue';
 
 
 // 如果需要使用环境变量，使用 import.meta.env 替代 process.env
@@ -22,9 +22,9 @@ const routes = [
         component: QuickScanResults
     },
     {
-        path: '/updateForm',
-        name: 'UpdateForm',
-        component: UpdateForm
+        path: '/inputForm',
+        name: 'inputForm',
+        component: inputForm
     }
 ];
 

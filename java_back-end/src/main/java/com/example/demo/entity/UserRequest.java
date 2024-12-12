@@ -1,46 +1,58 @@
 package com.example.demo.entity;
 
+import jakarta.validation.Valid;
+import jakarta.validation.constraints.DecimalMin;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.Pattern;
 import lombok.Data;
-import org.springframework.stereotype.Component;
-import org.springframework.web.bind.annotation.ResponseBody;
 
-import javax.validation.constraints.*;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
+
 @Data
 public class UserRequest {
+    @Valid
+    @NotEmpty(message = "Battery Passport Identification cannot be empty")
+    private String batteryPassportIdentification;
+    @Valid
+    @NotEmpty(message = "Battery Identification cannot be empty")
+    private String batteryIdentification;
+    @Valid
+    @NotEmpty(message = "Responsible Economic Operator Identifier cannot be empty")
+    private String responsibleEconomicOperatorIdentifier;
+    @Valid
+    @NotEmpty(message = "Manufacturer's Identification cannot be empty")
+    private String manufacturersIdentification;
+    @Valid
+    @NotEmpty(message = "Manufacturing Place cannot be empty")
+    private String manufacturingPlace;
+    @Valid
+    @Pattern(regexp = "^(0[1-9]|1[0-2])\\/\\d{4}$", message = "Manufacturing Date must be in MM/YYYY format")
+    //错误处理
+//    @DateConstraint(message = "Manufacturing Date cannot be in the future or invalid")
+    private String manufacturingDate;
+    @Valid
+    @NotEmpty(message = "Battery Category cannot be empty")
+    private String batteryCategory;
+    @Valid
+    @DecimalMin(value = "0.0", message = "Weight must be a positive number")
+    private double weight;
+    @Valid
+    @NotEmpty(message = "Battery Status cannot be empty")
+    private String batteryStatus;
 
-    @NotNull(message = "不能为空")
-    @Size(min = 1, max = 50, message = "长度应在1到50之间")
-    private String name;
-
-    @NotNull(message = "不能为空")
-    @Size(min = 1, message = "不能少于1")
-    private int word;
-
-    @NotNull(message = "不能为空")
-    private Date date;
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public int getWord() {
-        return word;
-    }
-
-    public void setWord(int word) {
-        this.word = word;
-    }
-
-    public Date getDate() {
-        return date;
-    }
-
-    public void setDate(Date date) {
-        this.date = date;
-    }
+//    public boolean isValidManufacturingDate() {
+//        SimpleDateFormat sdf = new SimpleDateFormat("MM/yyyy");
+//        try {
+//            Date date = sdf.parse(manufacturingDate);
+//            if (date.after(new Date())) {
+//                return false; // Date can't be in the future
+//            }
+//        } catch (ParseException e) {
+//            return false; // Invalid date format
+//        }
+//        return true;
+//    }
 }
