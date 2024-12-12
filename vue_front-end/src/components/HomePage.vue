@@ -21,37 +21,12 @@
 
 <script>
 export default {
-  name: 'HomePage'
+  name: 'HomePage',
 };
 </script>
 
 <style scoped>
-.homepage {
-  text-align: center;
+.content {
   padding: 20px;
-}
-
-.intro {
-  margin: 20px 0;
-}
-
-.navigation ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-.navigation li {
-  display: inline;
-  margin: 0 15px;
-}
-
-.navigation a {
-  text-decoration: none;
-  color: #007BFF;
-  font-weight: bold;
-}
-
-.navigation a:hover {
-  text-decoration: underline;
 }
 </style>
