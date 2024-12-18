@@ -21,8 +21,9 @@ public class TestController {
     @PostMapping("/validate")
     public ResponseEntity<String> submitBatteryForm(@Valid @RequestBody UserRequest userrequest, BindingResult result) {
         if (result.hasErrors()) {
-            //将错误信息字符串化，遍历错误信息，表示 HTTP 状态码 400，表示客户端发送的请求有误（通常是表单验证失败等）。
-            // 将拼接好的错误消息作为响应体的内容，发送给客户端。这个消息可以帮助客户端理解请求失败的原因。
+            // Convert the error messages into a string, iterate through the error details, and indicate HTTP status code 400,
+            // which signifies that the client has sent a bad request (usually due to form validation failures, etc.).
+            // Send the concatenated error message as the response body to the client. This message will help the client understand the reason for the request failure.
             StringBuilder errorMessages = new StringBuilder();
             result.getAllErrors().forEach(error -> errorMessages.append(error.getDefaultMessage()).append("\n"));
             return ResponseEntity.badRequest().body(errorMessages.toString());
