@@ -6,13 +6,8 @@ import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Pattern;
 import lombok.Data;
 
-
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
 @Data
-public class UserRequest {
+public class ValidRequest {
     @Valid
     @NotEmpty(message = "Battery Passport Identification cannot be empty")
     private String batteryPassportIdentification;
@@ -29,7 +24,7 @@ public class UserRequest {
     @NotEmpty(message = "Manufacturing Place cannot be empty")
     private String manufacturingPlace;
     @Valid
-    @Pattern(regexp = "^(0[1-9]|1[0-2])\\/\\d{4}$", message = "Manufacturing Date must be in MM/YYYY format")
+    @Pattern(regexp = "^(0[1-9]|1[0-2])\\d{4}$", message = "Manufacturing Date must be in MM/YYYY format")
     //错误处理
 //    @DateConstraint(message = "Manufacturing Date cannot be in the future or invalid")
     private String manufacturingDate;

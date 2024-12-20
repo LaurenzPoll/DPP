@@ -1,9 +1,8 @@
 package com.example.demo.controller;
 
-import com.example.demo.entity.UserRequest;
+import com.example.demo.entity.ValidRequest;
 import jakarta.validation.Valid;
 import org.springframework.context.annotation.ComponentScan;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.validation.BindingResult;
 import org.springframework.http.ResponseEntity;
@@ -12,14 +11,14 @@ import org.springframework.http.ResponseEntity;
 @RestController
 @ComponentScan("com.example.demo.Validation")
 @RequestMapping("/test")
-public class TestController {
+public class ValidationController {
     @GetMapping
     public String testEndpoint() {
         return "GET请求已成功到达！";
     }
 
     @PostMapping("/validate")
-    public ResponseEntity<String> submitBatteryForm(@Valid @RequestBody UserRequest userrequest, BindingResult result) {
+    public ResponseEntity<String> submitBatteryForm(@Valid @RequestBody ValidRequest userrequest, BindingResult result) {
         if (result.hasErrors()) {
             // Convert the error messages into a string, iterate through the error details, and indicate HTTP status code 400,
             // which signifies that the client has sent a bad request (usually due to form validation failures, etc.).
