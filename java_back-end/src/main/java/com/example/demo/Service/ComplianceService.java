@@ -33,7 +33,7 @@ public class ComplianceService {
                 result.put("gap", "Field not provided");
             } else if ("Voluntary".equalsIgnoreCase(requirementLevel)) {
                 result.put("compliance", "Compliant");
-                result.put("gap", "Null");
+                result.put("gap", "None");
             } else if ("Mandatory".equalsIgnoreCase(requirementLevel)) {
                 if (fieldValue == null || fieldValue.trim().isEmpty()) {
                     result.put("compliance", "Not Compliant");
@@ -41,7 +41,7 @@ public class ComplianceService {
                 } else {
                     // TODO
                     result.put("compliance", "Compliant");
-                    result.put("gap", "Null");
+                    result.put("gap", "None");
                 }
             }
             complianceResults.put(fieldName, result);

@@ -6,6 +6,9 @@ import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Pattern;
 import lombok.Data;
 
+import java.util.HashMap;
+import java.util.Map;
+
 @Data
 public class ValidRequest {
     @Valid
@@ -50,4 +53,18 @@ public class ValidRequest {
 //        }
 //        return true;
 //    }
+// Method to convert the object to a Map
+//public Map<String, String> toFormDataMap() {
+//    Map<String, String> formData = new HashMap<>();
+//    formData.put("field1", getBatteryPassportIdentification());
+//    formData.put("field2", getBatteryIdentification());
+//    formData.put("field3", getResponsibleEconomicOperatorIdentifier());
+//    formData.put("field4", getManufacturersIdentification());
+//    formData.put("field5", getManufacturingPlace());
+//    formData.put("field6", getManufacturingDate());
+//    formData.put("field7", getBatteryCategory());
+//    formData.put("field8", String.valueOf(getWeight()));
+//    formData.put("field9", getBatteryStatus());
+//    return formData;
+//}
 }
