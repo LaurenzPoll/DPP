@@ -14,11 +14,11 @@ server:
 
 
 #mybatis-plus:
-#  # 搜索指定包别名
+#  # Search for the specified package alias
 #  typeAliasesPackage: com.example.**.domain
-#  # 配置mapper的扫描，找到所有的mapper.xml映射文件
+#  # Configure mapper scanning to find all mapper.xml mapping files
 #  mapperLocations: classpath*:mapper/**/*Mapper.xml
-#  # 加载全局的配置文件
+#  # Load the global configuration file
 #  configLocation: classpath:mybatis/mybatis-config.xml
 
 
