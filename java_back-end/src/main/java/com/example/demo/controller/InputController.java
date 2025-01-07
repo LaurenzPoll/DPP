@@ -11,14 +11,13 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @ComponentScan("com.example.demo.entity")
-//请求处理类
+
 @RequestMapping
-//注解类
+
 public class InputController {
 
     public InputDate InputDate;
 
-    // 显示输入页面
    @GetMapping
     public String hello(){return"hello world";}
 
