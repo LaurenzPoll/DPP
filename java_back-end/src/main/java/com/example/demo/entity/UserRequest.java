@@ -30,7 +30,7 @@ public class UserRequest {
     private String manufacturingPlace;
     @Valid
     @Pattern(regexp = "^(0[1-9]|1[0-2])\\/\\d{4}$", message = "Manufacturing Date must be in MM/YYYY format")
-    //错误处理
+
 //    @DateConstraint(message = "Manufacturing Date cannot be in the future or invalid")
     private String manufacturingDate;
     @Valid
