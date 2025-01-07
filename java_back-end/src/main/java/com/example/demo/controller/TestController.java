@@ -15,7 +15,7 @@ import org.springframework.http.ResponseEntity;
 public class TestController {
     @GetMapping
     public String testEndpoint() {
-        return "GET请求已成功到达！";
+        return "The GET request has arrived successfully！";
     }
 
     @PostMapping("/validate")
