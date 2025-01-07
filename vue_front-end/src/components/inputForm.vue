@@ -4,7 +4,7 @@
     <h2>Battery Passport Identification</h2>
 
     <form @submit.prevent="submitForm">
-      <!-- 电池护照标识 -->
+     
       <div class="form-group">
         <label for="batteryPassport">Battery Passport Identification</label>
         <input
@@ -28,7 +28,7 @@
         />
       </div>
 
-      <!-- 负责经济运营者标识 -->
+      
       <div class="form-group">
         <label for="operatorId">Responsible Economic Operator Identifier</label>
         <input
@@ -40,7 +40,7 @@
         />
       </div>
 
-      <!-- 制造商标识 -->
+      
       <div class="form-group">
         <label for="manufacturerId">Manufacturer's Identification</label>
         <input
@@ -52,7 +52,7 @@
         />
       </div>
 
-      <!-- 制造地点 -->
+      
       <div class="form-group">
         <label for="manufacturingPlace">manufacturing place</label>
         <input
@@ -64,7 +64,7 @@
         />
       </div>
 
-      <!-- 制造日期 -->
+      
       <div class="form-group">
         <label for="manufacturingDate">Manufacturing Date</label>
         <input
@@ -75,7 +75,7 @@
         />
       </div>
 
-      <!-- 电池类别 -->
+      
       <div class="form-group">
         <label for="batteryCategory">Battery Category</label>
         <select
@@ -91,7 +91,7 @@
         </select>
       </div>
 
-      <!-- 重量 -->
+      
       <div class="form-group">
         <label for="weight">Weight/kg</label>
         <input
@@ -104,7 +104,7 @@
         />
       </div>
 
-      <!-- 电池状态 -->
+      
       <div class="form-group">
         <label for="batteryStatus">Battery Status</label>
         <select
@@ -120,7 +120,7 @@
         </select>
       </div>
 
-      <!-- 提交按钮 -->
+      
       <div class="form-group">
         <button type="submit">submit</button>
       </div>
@@ -146,9 +146,9 @@ export default {
     };
   },
   methods: {
-    // 校验重量输入是否为数字
+    
     validateWeight(event) {
-      const regex = /^[0-9]+(\.[0-9]{1,2})?$/;  // 允许整数或小数（最多两位）
+      const regex = /^[0-9]+(\.[0-9]{1,2})?$/;  
       if (!regex.test(event.target.value)) {
         event.target.setCustomValidity('please enter a number');
       } else {
@@ -156,9 +156,9 @@ export default {
       }
     },
     submitForm() {
-      // 提交表单
-      console.log('提交的数据:', this.formData);
-      alert('表单已提交');
+      
+      console.log('Submitted Data:', this.formData);
+      alert('Form Submitted');
     },
   },
 };
