@@ -1,10 +1,10 @@
 <template>
   <div id="app" class="app-layout">
-    <!-- 左侧侧边栏 -->
+
     <Sidebar />
-    <!-- 右侧内容区域 -->
+   
     <div class="main-content">
-      <router-view /> <!-- 动态切换路由内容 -->
+      <router-view /> 
     </div>
   </div>
 </template>
@@ -29,6 +29,6 @@ export default {
 .main-content {
   flex: 1;
   padding: 20px;
-  margin-left: 200px; /* 确保内容不与侧边栏重叠 */
+  margin-left: 200px; 
 }
 </style>
