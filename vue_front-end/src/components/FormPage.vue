@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import { createListItem } from './api/listApi.js'; // 引入 API 模块
+import { createListItem } from './api/listApi.js'; 
 
 export default {
   name: 'FormPage',
@@ -40,7 +40,7 @@ button {
   cursor: pointer;
 }
 
-/* 错误 en 成功 berichten stijlen */
+
 .error {
   color: red;
 }
