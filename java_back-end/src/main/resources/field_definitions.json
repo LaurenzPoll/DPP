@@ -17,7 +17,7 @@
       "Requirement Level": "Mandatory"
     },
     {
-      "Field": "Manufacturing Place (manufacturing facility geographical location)",
+      "Field": "Manufacturing Place",
       "Requirement Level": "Mandatory"
     },
     {
@@ -25,7 +25,7 @@
       "Requirement Level": "Mandatory"
     },
     {
-      "Field": "Battery category",
+      "Field": "Battery Category",
       "Requirement Level": "Mandatory"
     },
     {
