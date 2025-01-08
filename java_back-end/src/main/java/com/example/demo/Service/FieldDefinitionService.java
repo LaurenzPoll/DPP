@@ -1,6 +1,7 @@
 package com.example.demo.Service;
 
 import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.Resource;
@@ -25,12 +26,22 @@ public class FieldDefinitionService {
     public void init() throws IOException {
         Resource resource = resourceLoader.getResource("classpath:field_definitions.json");
         ObjectMapper objectMapper = new ObjectMapper();
-        List<FieldDefinition> fieldDefinitions = objectMapper.readValue(resource.getInputStream(),
-                new TypeReference<List<FieldDefinition>>() {});
+
+        // Read the JSON as a tree
+        JsonNode rootNode = objectMapper.readTree(resource.getInputStream());
+
+        // Extract the 'fields' node
+        JsonNode fieldsNode = rootNode.get("fields");
+
+        // Convert the 'fields' node to a List<FieldDefinition>
+        List<FieldDefinition> fieldDefinitions = objectMapper.convertValue(fieldsNode, new TypeReference<List<FieldDefinition>>() {});
+
+        // Populate the fieldRequirements map
         for (FieldDefinition fieldDefinition : fieldDefinitions) {
             fieldRequirements.put(fieldDefinition.getField(), fieldDefinition.getRequirementLevel());
         }
     }
+
 
     public String getRequirementLevel(String fieldName) {
         return fieldRequirements.get(fieldName);
