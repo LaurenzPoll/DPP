@@ -1,4 +1,3 @@
-
 <template>
   <div class="battery-form">
     <h2>Battery Passport Identification</h2>
@@ -6,11 +5,11 @@
     <form @submit.prevent="submitForm">
       <!-- 电池护照标识 -->
       <div class="form-group">
-        <label for="batteryPassport">Battery Passport Identification</label>
+        <label for="batteryPassportIdentification">Battery Passport Identification</label>
         <input
             type="text"
-            id="batteryPassport"
-            v-model="formData.batteryPassport"
+            id="batteryPassportIdentification"
+            v-model="formData.batteryPassportIdentification"
             placeholder="Please enter the battery passport identification"
             required
         />
@@ -18,11 +17,11 @@
 
       <!-- 电池标识 -->
       <div class="form-group">
-        <label for="batteryId">Battery Identification</label>
+        <label for="batteryIdentification">Battery Identification</label>
         <input
             type="text"
-            id="batteryId"
-            v-model="formData.batteryId"
+            id="batteryIdentification"
+            v-model="formData.batteryIdentification"
             placeholder="Please enter the battery identification"
             required
         />
@@ -30,11 +29,11 @@
 
       <!-- 负责经济运营者标识 -->
       <div class="form-group">
-        <label for="operatorId">Responsible Economic Operator Identifier</label>
+        <label for="responsibleEconomicOperatorIdentifier">Responsible Economic Operator Identifier</label>
         <input
             type="text"
-            id="operatorId"
-            v-model="formData.operatorId"
+            id="responsibleEconomicOperatorIdentifier"
+            v-model="formData.responsibleEconomicOperatorIdentifier"
             placeholder="Please enter the responsible economic operator identifier"
             required
         />
@@ -42,11 +41,11 @@
 
       <!-- 制造商标识 -->
       <div class="form-group">
-        <label for="manufacturerId">Manufacturer's Identification</label>
+        <label for="manufacturersIdentification">Manufacturer's Identification</label>
         <input
             type="text"
-            id="manufacturerId"
-            v-model="formData.manufacturerId"
+            id="manufacturersIdentification"
+            v-model="formData.manufacturersIdentification"
             placeholder="Please enter the manufacturer's identification"
             required
         />
@@ -54,7 +53,7 @@
 
       <!-- 制造地点 -->
       <div class="form-group">
-        <label for="manufacturingPlace">manufacturing place</label>
+        <label for="manufacturingPlace">Manufacturing Place</label>
         <input
             type="text"
             id="manufacturingPlace"
@@ -133,10 +132,10 @@ export default {
   data() {
     return {
       formData: {
-        batteryPassport: '',
-        batteryId: '',
-        operatorId: '',
-        manufacturerId: '',
+        batteryPassportIdentification: '',
+        batteryIdentification: '',
+        responsibleEconomicOperatorIdentifier: '',
+        manufacturersIdentification: '',
         manufacturingPlace: '',
         manufacturingDate: '',
         batteryCategory: 'Stationary',
@@ -159,6 +158,8 @@ export default {
       // 提交表单
       console.log('提交的数据:', this.formData);
       alert('表单已提交');
+      // Perform any HTTP request (e.g., via axios/fetch) to "/test/validate" here
+      // axios.post("/test/validate", this.formData)...
     },
   },
 };
