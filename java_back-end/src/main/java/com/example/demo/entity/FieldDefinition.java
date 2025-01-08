@@ -1,7 +1,11 @@
 package com.example.demo.entity;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class FieldDefinition {
+    @JsonProperty("Field")
     private String field;
+    @JsonProperty("Requirement Level")
     private String requirementLevel;
 
     // Getters and setters
