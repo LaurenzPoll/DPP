@@ -33,7 +33,7 @@ public class ValidationController {
     }
 
     @PostMapping("/validate")
-    @CrossOrigin(origins = "http://localhost:5174")
+    @CrossOrigin(origins = "http://localhost:8080")
     public ResponseEntity<Object> submitBatteryForm(@Valid @RequestBody ValidRequest userRequest,
                                                     BindingResult result) {
         // Log the request data
