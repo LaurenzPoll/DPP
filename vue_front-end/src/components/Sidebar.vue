@@ -5,10 +5,7 @@
         <router-link to="/" class="link" active-class="active">🏠 Home</router-link>
       </li>
       <li>
-        <router-link to="/updateform" class="link" active-class="active">📝 Form</router-link>
-      </li>
-      <li>
-        <router-link to="/quickscan-results" class="link" active-class="active">📊 QuickScan results</router-link>
+        <router-link to="/inputform" class="link" active-class="active">📝 Form</router-link>
       </li>
       <li>
         <router-link to="/information" class="link" active-class="active">ℹ️ Information</router-link>
