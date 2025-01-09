@@ -12,13 +12,9 @@ const apiClient = axios.create({
 // 定义一个函数，用于向后端发送 POST 请求
 export const createListItem = async (data) => {
     try {
-        // 发送 POST 请求到 /list 端点
         const response = await apiClient.post('/list', data);
-
-        // 返回后端响应的数据
-        return response.data;
+        return response.data;  // Zorg ervoor dat de backend een veld "validated" en "data" terugstuurt
     } catch (error) {
-        // 如果请求失败，抛出错误，方便外部捕获和处理
         throw error;
     }
 };

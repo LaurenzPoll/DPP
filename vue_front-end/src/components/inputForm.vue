@@ -3,7 +3,6 @@
     <h2>Battery Passport Identification</h2>
 
     <form @submit.prevent="submitForm">
-      <!-- 电池护照标识 -->
       <div class="form-group">
         <label for="batteryPassportIdentification">Battery Passport Identification</label>
         <input
@@ -15,7 +14,6 @@
         />
       </div>
 
-      <!-- 电池标识 -->
       <div class="form-group">
         <label for="batteryIdentification">Battery Identification</label>
         <input
@@ -27,7 +25,6 @@
         />
       </div>
 
-      <!-- 负责经济运营者标识 -->
       <div class="form-group">
         <label for="responsibleEconomicOperatorIdentifier">Responsible Economic Operator Identifier</label>
         <input
@@ -39,7 +36,6 @@
         />
       </div>
 
-      <!-- 制造商标识 -->
       <div class="form-group">
         <label for="manufacturersIdentification">Manufacturer's Identification</label>
         <input
@@ -51,7 +47,6 @@
         />
       </div>
 
-      <!-- 制造地点 -->
       <div class="form-group">
         <label for="manufacturingPlace">Manufacturing Place</label>
         <input
@@ -63,7 +58,6 @@
         />
       </div>
 
-      <!-- 制造日期 -->
       <div class="form-group">
         <label for="manufacturingDate">Manufacturing Date</label>
         <input
@@ -74,7 +68,6 @@
         />
       </div>
 
-      <!-- 电池类别 -->
       <div class="form-group">
         <label for="batteryCategory">Battery Category</label>
         <select
@@ -90,7 +83,6 @@
         </select>
       </div>
 
-      <!-- 重量 -->
       <div class="form-group">
         <label for="weight">Weight/kg</label>
         <input
@@ -103,7 +95,6 @@
         />
       </div>
 
-      <!-- 电池状态 -->
       <div class="form-group">
         <label for="batteryStatus">Battery Status</label>
         <select
@@ -119,15 +110,17 @@
         </select>
       </div>
 
-      <!-- 提交按钮 -->
       <div class="form-group">
-        <button type="submit">submit</button>
+        <button type="submit">Submit</button>
       </div>
     </form>
   </div>
 </template>
 
 <script>
+import { createListItem } from './api/listApi.js';
+import axios from "axios";
+
 export default {
   data() {
     return {
@@ -145,22 +138,24 @@ export default {
     };
   },
   methods: {
-    // 校验重量输入是否为数字
-    validateWeight(event) {
-      const regex = /^[0-9]+(\.[0-9]{1,2})?$/;  // 允许整数或小数（最多两位）
-      if (!regex.test(event.target.value)) {
-        event.target.setCustomValidity('please enter a number');
-      } else {
-        event.target.setCustomValidity('');
-      }
-    },
     submitForm() {
-      // 提交表单
-      console.log('提交的数据:', this.formData);
-      alert('表单已提交');
-      // Perform any HTTP request (e.g., via axios/fetch) to "/test/validate" here
-      // axios.post("/test/validate", this.formData)...
-    },
+      const monthYear = this.formData.manufacturingDate;
+      if (monthYear) {
+        const [year, month] = monthYear.split('-');
+        this.formData.manufacturingDate = `${month}/${year}`;
+      }
+
+      axios.post('http://localhost:8090/test/validate', this.formData)
+          .then(response => {
+            this.$router.push({
+              name: 'QuickScanResults',
+              query: {data: JSON.stringify(response.data)}
+            });
+          })
+          .catch(error => {
+            alert('Error submitting form');
+          });
+    }
   },
 };
 </script>
