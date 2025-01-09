@@ -25,28 +25,67 @@ public class ComplianceService {
         for (Map.Entry<String, String> entry : formData.entrySet()) {
             String fieldName = entry.getKey();
             String fieldValue = entry.getValue();
-            String requirementLevel = fieldDefinitionService.getRequirementLevel(fieldName);
 
+            // 1. Fetch the requirement level from the service
+            String rawRequirementLevel = fieldDefinitionService.getRequirementLevel(fieldName);
+            // Treat null as "Unknown"
+            String effectiveRequirementLevel = (rawRequirementLevel == null) ? "Unknown" : rawRequirementLevel;
+
+            // 2. Prepare the result map for this field
             Map<String, String> result = new HashMap<>();
-            if (requirementLevel == null) {
-                result.put("compliance", "Not Compliant");
-                result.put("gap", "Field not provided");
-            } else if ("Voluntary".equalsIgnoreCase(requirementLevel)) {
-                result.put("compliance", "Compliant");
-                result.put("gap", "None");
-            } else if ("Mandatory".equalsIgnoreCase(requirementLevel)) {
-                if (fieldValue == null || fieldValue.trim().isEmpty()) {
-                    result.put("compliance", "Not Compliant");
-                    result.put("gap", "Field not provided");
-                } else {
-                    // TODO
+            result.put("requirementLevel", effectiveRequirementLevel);
+
+            // 3. Set compliance and gap based on requirementLevel + fieldValue
+            switch (effectiveRequirementLevel.toLowerCase()) {
+                case "mandatory" -> {
+                    if (fieldValue == null || fieldValue.trim().isEmpty()) {
+                        result.put("compliance", "Not Compliant");
+                        result.put("gap", "Field not provided");
+                    } else {
+                        result.put("compliance", "Compliant");
+                        result.put("gap", "None");
+                    }
+                }
+                case "voluntary" -> {
+                    // For voluntary fields, treat as compliant by default (or add custom logic)
                     result.put("compliance", "Compliant");
                     result.put("gap", "None");
                 }
+                default -> {
+                    // "Unknown" or any unrecognized requirement level
+                    result.put("compliance", "Not Compliant");
+                    result.put("gap", "Field not provided");
+                }
             }
+
+            // 4. Store the result for this field
             complianceResults.put(fieldName, result);
         }
 
         return complianceResults;
+
+//            String requirementLevel = fieldDefinitionService.getRequirementLevel(fieldName);
+//
+//            Map<String, String> result = new HashMap<>();
+//            if (requirementLevel == null) {
+//                result.put("compliance", "Not Compliant");
+//                result.put("gap", "Field not provided");
+//            } else if ("Voluntary".equalsIgnoreCase(requirementLevel)) {
+//                result.put("compliance", "Compliant");
+//                result.put("gap", "None");
+//            } else if ("Mandatory".equalsIgnoreCase(requirementLevel)) {
+//                if (fieldValue == null || fieldValue.trim().isEmpty()) {
+//                    result.put("compliance", "Not Compliant");
+//                    result.put("gap", "Field not provided");
+//                } else {
+//                    // TODO
+//                    result.put("compliance", "Compliant");
+//                    result.put("gap", "None");
+//                }
+//            }
+//            complianceResults.put(fieldName, result);
+//        }
+//
+//        return complianceResults;
     }
 }
