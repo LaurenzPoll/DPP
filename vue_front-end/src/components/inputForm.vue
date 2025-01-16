@@ -10,7 +10,7 @@
             id="batteryPassportIdentification"
             v-model="formData.batteryPassportIdentification"
             placeholder="Please enter the battery passport identification"
-            required
+
         />
       </div>
 
@@ -21,7 +21,7 @@
             id="batteryIdentification"
             v-model="formData.batteryIdentification"
             placeholder="Please enter the battery identification"
-            required
+
         />
       </div>
 
@@ -32,7 +32,7 @@
             id="responsibleEconomicOperatorIdentifier"
             v-model="formData.responsibleEconomicOperatorIdentifier"
             placeholder="Please enter the responsible economic operator identifier"
-            required
+
         />
       </div>
 
@@ -43,7 +43,7 @@
             id="manufacturersIdentification"
             v-model="formData.manufacturersIdentification"
             placeholder="Please enter the manufacturer's identification"
-            required
+
         />
       </div>
 
@@ -54,7 +54,7 @@
             id="manufacturingPlace"
             v-model="formData.manufacturingPlace"
             placeholder="Please enter the manufacturing place"
-            required
+
         />
       </div>
 
@@ -64,7 +64,7 @@
             type="month"
             id="manufacturingDate"
             v-model="formData.manufacturingDate"
-            required
+
         />
       </div>
 
@@ -73,7 +73,7 @@
         <select
             id="batteryCategory"
             v-model="formData.batteryCategory"
-            required
+
         >
           <option value="Stationary">Stationary</option>
           <option value="Battery Energy Storage System">Battery Energy Storage System</option>
@@ -91,7 +91,7 @@
             v-model="formData.weight"
             placeholder="Please enter the Weight"
             @input="validateWeight"
-            required
+
         />
       </div>
 
@@ -100,7 +100,7 @@
         <select
             id="batteryStatus"
             v-model="formData.batteryStatus"
-            required
+
         >
           <option value="Original">Original</option>
           <option value="Repurposed">Repurposed</option>
@@ -131,7 +131,7 @@ export default {
         manufacturersIdentification: '',
         manufacturingPlace: '',
         manufacturingDate: '',
-        batteryCategory: 'Stationary',
+        batteryCategory: '',
         weight: '',
         batteryStatus: 'Original',
       },
@@ -139,13 +139,17 @@ export default {
   },
   methods: {
     submitForm() {
-      const monthYear = this.formData.manufacturingDate;
+      const dataToSend = { ...this.formData };
+
+      const monthYear = dataToSend.manufacturingDate;
       if (monthYear) {
         const [year, month] = monthYear.split('-');
-        this.formData.manufacturingDate = `${month}/${year}`;
+        dataToSend.manufacturingDate = `${month}/${year}`;
+      } else {
+        dataToSend.manufacturingDate = null;
       }
 
-      axios.post('http://localhost:8090/test/validate', this.formData)
+      axios.post('http://localhost:8090/test/validate', dataToSend)
           .then(response => {
             this.$router.push({
               name: 'QuickScanResults',

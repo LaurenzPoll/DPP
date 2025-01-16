@@ -11,22 +11,22 @@ import java.util.Map;
 
 @Data
 public class ValidRequest {
-    @Valid
-    @NotEmpty(message = "Battery Passport Identification cannot be empty")
+//    @Valid
+//    @NotEmpty(message = "Battery Passport Identification cannot be empty")
     private String batteryPassportIdentification;
-    @Valid
-    @NotEmpty(message = "Battery Identification cannot be empty")
+//    @Valid
+//    @NotEmpty(message = "Battery Identification cannot be empty")
     private String batteryIdentification;
-    @Valid
-    @NotEmpty(message = "Responsible Economic Operator Identifier cannot be empty")
+//    @Valid
+//    @NotEmpty(message = "Responsible Economic Operator Identifier cannot be empty")
     private String responsibleEconomicOperatorIdentifier;
-    @Valid
-    @NotEmpty(message = "Manufacturer's Identification cannot be empty")
+//    @Valid
+//    @NotEmpty(message = "Manufacturer's Identification cannot be empty")
     private String manufacturersIdentification;
-    @Valid
-    @NotEmpty(message = "Manufacturing Place cannot be empty")
+//    @Valid
+//    @NotEmpty(message = "Manufacturing Place cannot be empty")
     private String manufacturingPlace;
-    @Valid
+//    @Valid
     @Pattern(
             regexp = "^(0[1-9]|1[0-2])/(20\\d{2})$",
             message = "Manufacturing Date must be in MM/YYYY format"
@@ -34,14 +34,14 @@ public class ValidRequest {
     //错误处理
 //    @DateConstraint(message = "Manufacturing Date cannot be in the future or invalid")
     private String manufacturingDate;
-    @Valid
-    @NotEmpty(message = "Battery Category cannot be empty")
+//    @Valid
+//    @NotEmpty(message = "Battery Category cannot be empty")
     private String batteryCategory;
-    @Valid
+//    @Valid
     @DecimalMin(value = "0.0", message = "Weight must be a positive number")
-    private double weight;
-    @Valid
-    @NotEmpty(message = "Battery Status cannot be empty")
+    private Double weight;
+//    @Valid
+//    @NotEmpty(message = "Battery Status cannot be empty")
     private String batteryStatus;
 
 //    public boolean isValidManufacturingDate() {

@@ -9,7 +9,7 @@
     <nav class="navigation">
       <ul>
         <li><router-link to="/inputForm">Input form</router-link></li>
-        <li><router-link to="/quickscan-results">View the quick scan results</router-link></li>
+<!--        <li><router-link to="/quickscan-results">View the quick scan results</router-link></li>-->
       </ul>
     </nav>
   </div>
@@ -22,7 +22,7 @@ export default {
 </script>
 
 <style scoped>
-.content {
-  padding: 20px;
+.homepage {
+  padding: 2rem;
 }
 </style>

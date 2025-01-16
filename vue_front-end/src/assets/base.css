@@ -68,17 +68,17 @@ body {
 
 /* 页面标题 */
 h1 {
-  font-size: 24px;
+  font-size: 3rem;
   margin-bottom: 10px;
 }
 
 h2 {
-  font-size: 20px;
+  font-size: 2rem;
   margin-bottom: 15px;
 }
 
 p {
-  font-size: 16px;
+  font-size: 18px;
 }
 
 /* Sidebar 样式 */

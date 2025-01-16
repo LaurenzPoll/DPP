@@ -12,6 +12,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.Map;
+import java.util.HashMap;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
@@ -48,19 +49,29 @@ public class ValidationController {
         }
 
         // Create formData
-        Map<String, String> formData = Map.of(
-                "Battery Passport Identification", userRequest.getBatteryPassportIdentification(),
-                "Battery Identification", userRequest.getBatteryIdentification(),
-                "Responsible Economic Operator Identifier", userRequest.getResponsibleEconomicOperatorIdentifier(),
-                "Manufacturer's Identification", userRequest.getManufacturersIdentification(),
-                "Manufacturing Place", userRequest.getManufacturingPlace(),
-                "Manufacturing Date", userRequest.getManufacturingDate(),
-                "Battery Category", userRequest.getBatteryCategory(),
-                "Weight", String.valueOf(userRequest.getWeight()),
-                "Battery Status", userRequest.getBatteryStatus()
-        );
+//        Map<String, String> formData = Map.of(
+//                "Battery Passport Identification", userRequest.getBatteryPassportIdentification(),
+//                "Battery Identification", userRequest.getBatteryIdentification(),
+//                "Responsible Economic Operator Identifier", userRequest.getResponsibleEconomicOperatorIdentifier(),
+//                "Manufacturer's Identification", userRequest.getManufacturersIdentification(),
+//                "Manufacturing Place", userRequest.getManufacturingPlace(),
+//                "Manufacturing Date", userRequest.getManufacturingDate(),
+//                "Battery Category", userRequest.getBatteryCategory(),
+//                "Weight", String.valueOf(userRequest.getWeight()),
+//                "Battery Status", userRequest.getBatteryStatus()
+//        );
 
-        // Log the form data before processing
+        Map<String, String> formData = new HashMap<>();
+        formData.put("Battery Passport Identification", userRequest.getBatteryPassportIdentification());
+        formData.put("Battery Identification", userRequest.getBatteryIdentification());
+        formData.put("Responsible Economic Operator Identifier", userRequest.getResponsibleEconomicOperatorIdentifier());
+        formData.put("Manufacturer's Identification", userRequest.getManufacturersIdentification());
+        formData.put("Manufacturing Place", userRequest.getManufacturingPlace());
+        formData.put("Manufacturing Date", userRequest.getManufacturingDate());
+        formData.put("Battery Category", userRequest.getBatteryCategory());
+        formData.put("Weight", userRequest.getWeight() != null ? String.valueOf(userRequest.getWeight()) : null);
+        formData.put("Battery Status", userRequest.getBatteryStatus());
+
         logger.info("Form data: {}", formData);
 
         // Evaluate compliance

@@ -40,7 +40,7 @@ public class ComplianceService {
                 case "mandatory" -> {
                     if (fieldValue == null || fieldValue.trim().isEmpty()) {
                         result.put("compliance", "Not Compliant");
-                        result.put("gap", "Field not provided");
+                        result.put("gap", "Data not entered: This field is required for compliance");
                     } else {
                         result.put("compliance", "Compliant");
                         result.put("gap", "None");
@@ -54,7 +54,7 @@ public class ComplianceService {
                 default -> {
                     // "Unknown" or any unrecognized requirement level
                     result.put("compliance", "Not Compliant");
-                    result.put("gap", "Field not provided");
+                    result.put("gap", "Data not entered: This field is required for compliance");
                 }
             }
 
