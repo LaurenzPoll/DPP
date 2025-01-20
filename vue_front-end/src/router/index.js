@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router';
 import HomePage from '../components/HomePage.vue';
 import QuickScanResults from '../components/QuickScanResults.vue';
 import inputForm from '../components/inputForm.vue';
+import information from "@/components/information.vue";
 
 const routes = [
     {
@@ -9,7 +10,6 @@ const routes = [
         name: 'Home',
         component: HomePage
     },
-
     {
         path: '/quickscan-results',
         name: 'QuickScanResults',
@@ -19,7 +19,12 @@ const routes = [
         path: '/inputForm',
         name: 'inputForm',
         component: inputForm
-    }
+    },
+    {
+        path: '/information',
+        name: 'information',
+        component: information
+    },
 ];
 
 const router = createRouter({
