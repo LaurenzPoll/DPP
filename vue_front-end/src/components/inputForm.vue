@@ -118,8 +118,10 @@
 </template>
 
 <script>
-import { createListItem } from './api/listApi.js';
-import axios from "axios";
+import { createListItem } from './api/analyzeCompliance.js';
+// import axios from "axios";
+
+import analyzeCompliance from './api/analyzeCompliance.js';
 
 export default {
   data() {
@@ -138,7 +140,7 @@ export default {
     };
   },
   methods: {
-    submitForm() {
+    async submitForm() {
       const dataToSend = { ...this.formData };
 
       const monthYear = dataToSend.manufacturingDate;
@@ -149,16 +151,13 @@ export default {
         dataToSend.manufacturingDate = null;
       }
 
-      axios.post('http://localhost:8090/test/validate', dataToSend)
-          .then(response => {
-            this.$router.push({
-              name: 'QuickScanResults',
-              query: {data: JSON.stringify(response.data)}
-            });
-          })
-          .catch(error => {
-            alert('Error submitting form');
-          });
+      const response = await analyzeCompliance(dataToSend);
+
+      // Navigate to results page with response data
+      this.$router.push({
+        name: 'QuickScanResults',
+        query: { data: JSON.stringify(response) }
+      });
     }
   },
 };

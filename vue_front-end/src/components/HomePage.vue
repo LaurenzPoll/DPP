@@ -3,13 +3,13 @@
     <section class="intro">
       <h1>DPP Quick Scan Tool</h1>
       <p>Welcome to the DPP Quick Scan Tool! This tool is designed to help LFP battery companies quickly assess their readiness for DPP compliance.</p>
-      <p>With a streamlined scanning process, you can get a gap analysis that identifies specific areas for improvement.</p>
+      <p>With a streamlined scanning process, you get a gap analysis that identifies specific areas for improvement.</p>
+      <p>Take a look at the information page for more context</p>
     </section>
 
     <nav class="navigation">
       <ul>
         <li><router-link to="/inputForm">Input form</router-link></li>
-<!--        <li><router-link to="/quickscan-results">View the quick scan results</router-link></li>-->
       </ul>
     </nav>
   </div>
